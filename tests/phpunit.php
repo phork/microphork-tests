@@ -35,8 +35,8 @@
             \Phork::loader()->autoload(false);
         }
     
-        !empty(\Phork::instance()->loader) && \Phork::instance()->deregister('loader');
-        !empty(\Phork::instance()->event)  && \Phork::instance()->deregister('event');
-        !empty(\Phork::instance()->output) && \Phork::instance()->deregister('output');
+        !empty(\Phork::instance()->loader) && \Phork::instance()->deregister('loader')->__destruct();
+        !empty(\Phork::instance()->event)  && \Phork::instance()->deregister('event')->__destruct();
+        !empty(\Phork::instance()->output) && \Phork::instance()->deregister('output')->__destruct();
         \Phork::instance()->__destruct();
     }
