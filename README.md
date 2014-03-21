@@ -1,7 +1,6 @@
 #microphork-tests
 
-* [By Phork Labs](http://phorklabs.com/)
-* Version: 0.1
+[![Build Status](https://travis-ci.org/phork/microphork-tests.svg)](https://travis-ci.org/phork/microphork-tests)
 
 
 ##Introduction
@@ -17,6 +16,11 @@ $ cd microphork-tests
 $ composer install --prefer-source --no-interaction --dev
 $ vendor/phpunit/phpunit/phpunit --configuration tests/phpunit.xml
 ```
+
+
+##Credits
+
+Built by [Elenor](http://elenor.net) at [Phork Labs](http://phorklabs.com).
 
 
 ##License
