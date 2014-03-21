@@ -1,0 +1,5 @@
+default: taco
+replace: taco bar
+
+default: burrito
+replace: burrito bar

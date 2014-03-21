@@ -1,0 +1,19 @@
+{
+    "name": "microphork/application",
+    "description": "A microphork application",
+    "keywords": ["microphork", "phork", "framework"],
+    "require": {
+        "microphork/framework": "*",
+        "microphork/package-auth": "*",
+        "microphork/package-debug": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phork\\Test\\": "tests/stubs/classes"
+        }
+    },
+    "minimum-stability": "dev"
+}

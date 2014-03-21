@@ -1,0 +1,8 @@
+default: hello
+replace: hello foo
+
+default: world
+replace: world foo
+
+default: hello %s
+replace: hello %s
