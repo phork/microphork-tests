@@ -12,13 +12,12 @@
     
     class_alias('Phork\\Core\\Exception', 'PhorkException');
     class_alias('Phork\\Core\\Bootstrap', 'Phork');
-    class_alias('Phork\\Core\\Loader', 'PhorkLoader');
     
     
     //helper function to initialize the bootstrap where it's needed
     function init_bootstrap() {
         \Phork::instance()
-            ->register('loader', \PhorkLoader::instance(true)
+            ->register('loader', \Phork\Core\Loader::instance()
                 ->mapPath('Core', CORE_PATH)
                 ->mapPath('App',  APP_PATH)
                 ->mapPath('View', VIEW_PATH)
@@ -29,7 +28,7 @@
         ;
     }
     
-    //helper function to destroy the bootstrap
+    //helper function to destroy the bootstrap (HHVM needs explicit __destruct)
     function destroy_bootstrap() {
         if (!empty(\Phork::instance()->loader)) {
             \Phork::loader()->autoload(false);

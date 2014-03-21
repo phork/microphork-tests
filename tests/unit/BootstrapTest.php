@@ -7,11 +7,17 @@
      */
     class BootstrapTest extends PHPUnit_Framework_TestCase 
     {
+        static protected $singletons = array();
+        
         /**
          * @coversNothing
          */
         public static function tearDownAfterClass()
         {
+            //re-register all the singletons so destroy_bootstrap can destroy them properly
+            foreach (static::$singletons as $name=>$object) {
+                \Phork::instance()->register($name, $object, true);    
+            }
             destroy_bootstrap();
         }
         
@@ -113,6 +119,10 @@
         public function testInit($bootstrap)
         {
             $bootstrap->init(PHK_ENV);
+            
+            static::$singletons['event'] = $bootstrap->event;
+            static::$singletons['output'] = $bootstrap->output;
+            static::$singletons['loader'] = $bootstrap->loader;
         }
         
         /**
