@@ -3,7 +3,7 @@
     date_default_timezone_set('UTC');
     
     (!defined('PHK_ENV')   && define('PHK_ENV',   'prod'));
-    (!defined('TEST_PATH') && define('TEST_PATH', realpath(__DIR__.'/stubs').'/'));
+    (!defined('TEST_PATH') && define('TEST_PATH', realpath(__DIR__.'/mocks').'/'));
     (!defined('CORE_PATH') && define('CORE_PATH', realpath(__DIR__.'/../vendor/microphork/framework/php/core').'/'));
     (!defined('APP_PATH')  && define('APP_PATH',  realpath(__DIR__.'/../vendor/microphork/framework/php/app').'/'));
     (!defined('VIEW_PATH') && define('VIEW_PATH', realpath(__DIR__.'/../vendor/microphork/framework/php/app/views').'/'));

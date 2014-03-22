@@ -37,4 +37,29 @@
             $this->statusCode = 400;
             $this->result = array();
         }
+        
+        /**
+         * Handles a GET request to /api/test/success.*
+         *
+         * @access protected
+         * @return void
+         */
+        protected function getAuth()
+        {
+            $this->success = true;
+            $this->result = array(
+                'auth' => $this->authenticated
+            );
+        }
+        
+        /**
+         * Throws an exception.
+         *
+         * @access protected
+         * @return void
+         */
+        protected function getException()
+        {
+            throw new \PhorkException('Exception');
+        }
     }
