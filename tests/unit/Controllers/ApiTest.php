@@ -1,5 +1,5 @@
 <?php
-    namespace Controllers\Api;
+    namespace Controllers;
     
     use \Phork\Core\Controllers\Api as CoreApi;
     use \Phork\App\Controllers\Api as Api;
