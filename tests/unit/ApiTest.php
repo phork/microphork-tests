@@ -3,6 +3,7 @@
     
     /**
      * @covers \Phork\Core\Api
+     * @covers \Phork\Core\Api\Internal
      */
     class ApiTest extends PHPUnit_Framework_TestCase 
     {
@@ -76,6 +77,11 @@
          * @covers \Phork\Core\Api::run
          * @covers \Phork\Core\Api::handle
          * @covers \Phork\Core\Api::handleBatch
+         * @covers \Phork\Core\Api\Internal::get
+         * @covers \Phork\Core\Api\Internal::post
+         * @covers \Phork\Core\Api\Internal::put
+         * @covers \Phork\Core\Api\Internal::delete
+         * @covers \Phork\Core\Api\Internal::request
          */
         public function testRunBatch()
         {
@@ -84,7 +90,7 @@
                 'requests' => json_encode(array(
                     'encoders-get' => array(
                         'method' => 'get',
-                        'url' => '/api/encoders.json'
+                        'url' => '/api/encoders.json?foo=bar'
                     ),
                     'encoders-post' => array(
                         'method' => 'post',

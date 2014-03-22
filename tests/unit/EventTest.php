@@ -3,6 +3,7 @@
     
     /**
      * @covers \Phork\Core\Event
+     * @covers \Phork\Core\Event\Action
      */
     class EventTest extends PHPUnit_Framework_TestCase 
     {

@@ -1,8 +1,10 @@
 <?php
+    namespace Iterators;
+    
     use \Phork\Core\Iterators\Associative;
     use \Phork\Test\Iterators\AssociativeInvalid;
     
-    class AssociativeIteratorTest extends PHPUnit_Framework_TestCase 
+    class AssociativeIteratorTest extends \PHPUnit_Framework_TestCase 
     {
         /**
          * @coversNothing

@@ -8,7 +8,7 @@
     (!defined('APP_PATH')  && define('APP_PATH',  realpath(__DIR__.'/../vendor/microphork/framework/php/app').'/'));
     (!defined('VIEW_PATH') && define('VIEW_PATH', realpath(__DIR__.'/../vendor/microphork/framework/php/app/views').'/'));
     (!defined('PKG_PATH')  && define('PKG_PATH',  realpath(__DIR__.'/../vendor/microphork/packages').'/'));
-    (!defined('LOG_PATH')  && define('LOG_PATH',  realpath(__DIR__.'/../logs/phpunit').'/'));
+    (!defined('LOG_PATH')  && define('LOG_PATH',  realpath(__DIR__.'/../logs').'/'));
     
     class_alias('Phork\\Core\\Exception', 'PhorkException');
     class_alias('Phork\\Core\\Bootstrap', 'Phork');
