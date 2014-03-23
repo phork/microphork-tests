@@ -19,7 +19,7 @@
     
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">vendor/microphork/framework/php/core/classes</directory>
+            <directory suffix=".php">../../../php/core/classes</directory>
         </whitelist>
     </filter>
 </phpunit>

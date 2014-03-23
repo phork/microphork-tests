@@ -1,15 +1,16 @@
 <?php
-    require_once __DIR__.'/../vendor/autoload.php';
-    date_default_timezone_set('UTC');
-    
     (!defined('PHK_ENV')     && define('PHK_ENV',     'prod'));
-    (!defined('VENDOR_PATH') && define('VENDOR_PATH', realpath(__DIR__.'/../vendor/microphork').'/'));
-    (!defined('CORE_PATH')   && define('CORE_PATH',   realpath(VENDOR_PATH.'framework/php/core').'/'));
-    (!defined('APP_PATH')    && define('APP_PATH',    realpath(VENDOR_PATH.'framework/php/app').'/'));
-    (!defined('VIEW_PATH')   && define('VIEW_PATH',   realpath(VENDOR_PATH.'framework/php/app/views').'/'));
-    (!defined('PKG_PATH')    && define('PKG_PATH',    realpath(VENDOR_PATH.'packages').'/'));
+    (!defined('VENDOR_PATH') && define('VENDOR_PATH', realpath(__DIR__.'/../../../').'/'));
+    (!defined('PHORK_PATH')  && define('PHORK_PATH',  realpath(__DIR__.'/../../../../').'/'));
+    (!defined('CORE_PATH')   && define('CORE_PATH',   realpath(PHORK_PATH.'php/core').'/'));
+    (!defined('APP_PATH')    && define('APP_PATH',    realpath(PHORK_PATH.'php/app').'/'));
+    (!defined('VIEW_PATH')   && define('VIEW_PATH',   realpath(PHORK_PATH.'php/app/views').'/'));
+    (!defined('PKG_PATH')    && define('PKG_PATH',    realpath(VENDOR_PATH.'microphork/packages').'/'));
     (!defined('TEST_PATH')   && define('TEST_PATH',   realpath(__DIR__.'/mocks').'/'));
     (!defined('LOG_PATH')    && define('LOG_PATH',    realpath(__DIR__.'/../logs').'/'));
+    
+    require_once VENDOR_PATH.'autoload.php';
+    date_default_timezone_set('UTC');
     
     class_alias('Phork\\Core\\Exception', 'PhorkException');
     class_alias('Phork\\Core\\Bootstrap', 'Phork');
