@@ -1,6 +1,6 @@
 {
-    "name": "microphork/application",
-    "description": "A microphork application",
+    "name": "microphork/tests",
+    "description": "Unit tests for the microphork framework",
     "keywords": ["microphork", "phork", "framework"],
     "require": {
         "microphork/framework": "*",
