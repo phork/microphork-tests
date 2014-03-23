@@ -2,6 +2,8 @@
     "name": "microphork/tests",
     "description": "Unit tests for the microphork framework",
     "keywords": ["microphork", "phork", "framework"],
+    "license": "MIT",
+    "homepage": "http://phork.org",
     "require": {
         "microphork/framework": "*",
         "microphork/package-auth": "*",
@@ -13,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Phork\\Test\\": "tests/mocks/classes"
+            "Phork\\Test\\": "php/mocks/classes"
         }
     },
     "minimum-stability": "dev"

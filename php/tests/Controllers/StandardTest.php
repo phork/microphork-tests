@@ -122,6 +122,6 @@
          */
         public function getHelperPath()
         {
-            return __DIR__.'/../../helpers/controllers/';
+            return __DIR__.'/../../helpers/controller/';
         }
     }

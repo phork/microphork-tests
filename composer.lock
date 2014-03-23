@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a371868066296f6dd936749def68819b",
+    "hash": "13a062bd1c79e4b713ae05f90d0fe4e2",
     "packages": [
         {
             "name": "microphork/framework",
