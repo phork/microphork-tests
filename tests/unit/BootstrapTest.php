@@ -120,6 +120,13 @@
         {
             $bootstrap->init(PHK_ENV);
             
+            $this->assertInstanceOf('\Phork\Core\Config', $bootstrap->config);
+            $this->assertInstanceOf('\Phork\Core\Event', $bootstrap->event);
+            $this->assertInstanceOf('\Phork\Core\Error', $bootstrap->error);
+            $this->assertInstanceOf('\Phork\Core\Language', $bootstrap->language);
+            $this->assertInstanceOf('\Phork\Core\Router', $bootstrap->router);
+            $this->assertInstanceOf('\Phork\Core\Output', $bootstrap->output);
+            
             static::$singletons['event'] = $bootstrap->event;
             static::$singletons['output'] = $bootstrap->output;
             static::$singletons['loader'] = $bootstrap->loader;
@@ -227,7 +234,7 @@
             $this->assertTrue(empty($bootstrap->output));
             $this->assertTrue(empty($bootstrap->loader));
             $this->assertTrue(empty($bootstrap->router));
-            $this->assertTrue(empty($bootstrap->events));
+            $this->assertTrue(empty($bootstrap->event));
             $this->assertTrue(empty($bootstrap->config));
             $this->assertTrue(empty($bootstrap->language));
         }

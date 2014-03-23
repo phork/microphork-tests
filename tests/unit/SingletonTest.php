@@ -1,5 +1,8 @@
 <?php
     use \Phork\Core\Singleton;
+    use \Phork\Test\SingletonOne;
+    use \Phork\Test\SingletonTwo;
+    use \Phork\Test\SingletonThree;
     
     /**
      * @covers \Phork\Core\Singleton
@@ -96,47 +99,5 @@
             $method->setAccessible(true);
             
             return $method->invokeArgs($object, $args);
-        }
-    }
-
-    class SingletonOne extends Singleton 
-    {
-        public function instances()
-        {
-            return static::$instances;
-        }
-        
-        public function dereferenced()
-        {
-            return static::$dereferenced;
-        }
-    }
-    
-    class SingletonTwo extends Singleton
-    {
-        protected $data = array(); 
-        
-        public function __get($var)
-        {
-            if (array_key_exists($var, $this->data)) {
-                return $this->data[$var];
-            }
-        }
-        
-        public function __set($var, $val)
-        {
-            return $this->data[$var] = $val;
-        }
-    }
-    
-    class SingletonThree extends Singleton
-    {
-        public function __destruct()
-        {
-            parent::__destruct();
-            
-            if (array_key_exists($class = get_called_class(), static::$instances)) {
-                throw new \PhorkException('Unable to destroy singleton');
-            }
         }
     }

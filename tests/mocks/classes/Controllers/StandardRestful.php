@@ -22,7 +22,6 @@
             $this->displayIndex();
         }
         
-        
         /**
          * Maps the post method to standard index page.
          *

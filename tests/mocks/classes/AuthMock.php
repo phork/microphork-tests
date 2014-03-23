@@ -19,7 +19,6 @@
          */
         public function standardAuth($username, $password) {}
         
-        
         /**
          * Returns whether or not the user is authenticated.
          *
@@ -27,7 +26,6 @@
          * @return boolean True if authenticated
          */
         public function isAuthenticated() {}
-        
         
         /**
          * Returns whether or not the token is valid.

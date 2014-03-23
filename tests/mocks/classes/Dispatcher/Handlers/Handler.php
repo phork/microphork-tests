@@ -11,7 +11,6 @@
     class Handler implements HandlerInterface
     {
         protected $action;
-
         
         /**
          * Sets up the handler's params including whether the debugging
@@ -29,7 +28,6 @@
                 }
             }
         }
-
 
         /**
          * Concatenates and prints or returns the arguments passed.
