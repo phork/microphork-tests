@@ -63,7 +63,7 @@
             $result = $actual->loadXML($output);
             $this->assertTrue($result);
             
-            $this->assertEqualXMLStructure($expected, $actual, true);
+            $this->assertEqualXMLStructure($expected->firstChild, $actual->firstChild, true);
         }
         
         /**
@@ -90,7 +90,7 @@
             $result = $actual->loadXML($output);
             $this->assertTrue($result);
             
-            $this->assertEqualXMLStructure($expected, $actual, true);
+            $this->assertEqualXMLStructure($expected->firstChild, $actual->firstChild, true);
         }
         
         /**
