@@ -37,14 +37,16 @@
          */
         public function testEncode($xml)
         {
-            $result = $xml->encode($this->source);
+            $output = $xml->encode($this->source);
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><foos><node>foo1</node><node>foo2</node></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
-
+            $result = $expected->loadXML('<root><foos><node>foo1</node><node>foo2</node></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
         
@@ -56,18 +58,20 @@
          */
         public function testEncodeNumericReplacements($xml)
         {
-            $result = $xml->encode($this->source, array(
+            $output = $xml->encode($this->source, array(
                 'numericReplacements' => array(
                     'foos' => 'foo'
                 )
             ));
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><foos><foo>foo1</foo><foo>foo2</foo></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
-    
+            $result = $expected->loadXML('<root><foos><foo>foo1</foo><foo>foo2</foo></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
         
@@ -79,16 +83,18 @@
          */
         public function testEncodeNumericPrefix($xml)
         {
-            $result = $xml->encode($this->source, array(
+            $output = $xml->encode($this->source, array(
                 'numericPrefix' => 'foo'
             ));
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><foos><foo>foo1</foo><foo>foo2</foo></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
-    
+            $result = $expected->loadXML('<root><foos><foo>foo1</foo><foo>foo2</foo></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
         
@@ -100,16 +106,18 @@
          */
         public function testEncodeIncludeKeys($xml)
         {
-            $result = $xml->encode($this->source, array(
+            $output = $xml->encode($this->source, array(
                 'includeKeys' => true
             ));
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><foos><node key="0">foo1</node><node key="1">foo2</node></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
-
+            $result = $expected->loadXML('<root><foos><node key="0">foo1</node><node key="1">foo2</node></foos><bars><bar1>taco</bar1><bar2>beer</bar2></bars></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
     }

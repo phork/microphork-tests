@@ -53,14 +53,16 @@
             \Phork::router()->init('get', 'api/encoders.xml', array());
             
             $api->run();
-            $result = ob_get_clean();
+            $output = ob_get_clean();
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><encoders><ext>xml</ext><ext>json</ext><ext>jsonp</ext></encoders></root>');
-    
+            $result = $expected->loadXML('<root><encoders><ext>xml</ext><ext>json</ext><ext>jsonp</ext></encoders></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
         
@@ -78,14 +80,16 @@
             \Phork::router()->init('get', 'api/xxx.xml', array());
             
             $api->run();
-            $result = ob_get_clean();
+            $output = ob_get_clean();
             
             $expected = new \DOMDocument;
-            $expected->loadXML('<root><errors><error>Invalid API method</error></errors></root>');
-    
+            $result = $expected->loadXML('<root><errors><error>Invalid API method</error></errors></root>');
+            $this->assertTrue($result);
+            
             $actual = new \DOMDocument;
-            $actual->loadXML($result);
-        
+            $result = $actual->loadXML($output);
+            $this->assertTrue($result);
+            
             $this->assertEqualXMLStructure($expected, $actual, true);
         }
         
