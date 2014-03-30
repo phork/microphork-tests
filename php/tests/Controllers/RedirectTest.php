@@ -15,6 +15,8 @@
         {
             init_bootstrap();
             \Phork::instance()->init(PHK_ENV);
+            \Phork::config()->router->urls->set('base', '');
+            
             \Phork::router()->setRoutes(array(
                 '^/permanent/?' => '/redirect/status=301/home/permanent/',
                 '^/standard/?' => '/redirect/home/standard/'
